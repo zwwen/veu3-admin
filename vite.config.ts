@@ -1,7 +1,30 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-
-// https://vite.dev/config/
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import path from 'path';
+import Unocss from 'unocss/vite';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import ElementPlus from 'unplugin-element-plus/vite';
 export default defineConfig({
-  plugins: [vue()],
-})
+  plugins: [
+    vue(),
+    Unocss(),
+    ElementPlus({}),
+    AutoImport({
+      // api 自动导入
+      imports: ['vue', 'vue-router', 'pinia'],
+      resolvers: [ElementPlusResolver()],
+      eslintrc: { enabled: false } // 给eslint生成的配置文件 只需要生成一次 后改为false
+    }),
+    Components({
+      // 组件自动导入
+      resolvers: [ElementPlusResolver()],
+      dirs: ['src/components', 'src/layout/components']
+    })
+  ],
+  // 配置别名
+  resolve: {
+    alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }]
+  }
+});

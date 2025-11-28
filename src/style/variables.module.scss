@@ -1,0 +1,24 @@
+// .module.scss 为了在js中也可以使用
+$sidebarWidth: 210px;
+$navBarHeight: 50px;
+$tagsViewHeight: 34px;
+// 菜单导航颜色
+$menuText: #bfcbd9;
+// 菜单项被激活颜色
+$menuActiveText: #409eff;
+// 菜单背景色
+$menuBg: #304156;
+$theme: #409eff;
+
+// css in js 的方式 vite默认支持 直接在组件中通过import方式导入，如果是ts环境则需要申明
+:export {
+  // 菜单导航颜色
+  menuText: $menuText;
+  // 菜单项被激活颜色
+  menuActiveText: $menuActiveText;
+  // 菜单背景色
+  menuBg: $menuBg;
+  theme: $theme;
+  navBarHeight: $navBarHeight;
+  tagsViewHeight: $tagsViewHeight;
+}
