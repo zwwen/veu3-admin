@@ -64,7 +64,7 @@ const outerHeight = computed(() => {
   .main-container {
     @apply flex-1 flex flex-col overflow-hidden;
     .header {
-      @apply h-84px bg-white shadow-md flex flex-col;
+      @apply bg-white shadow-md flex flex-col;
 
       .tags-view {
         @apply h-[var(--tagsview-height)] bg-gray-50;

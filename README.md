@@ -1,4 +1,4 @@
-# 技术栈：Vue3 + Vue-Router + Pinia + Element-Plus + TypeScript + Vite
+# 技术栈：Vue3 + Vue-Router + Pinia + Element-Plus + TypeScript + Vite + Axios
 
     - 创建项目：pnpm create vite --template vue-ts
     - 安装代码校验插件：npx eslint --init
@@ -18,6 +18,7 @@
     - 安装路径参数解析插件：pnpm i path-to-regexp
     - 安装全屏功能插件：pnpm i screenfull
     - 安装换肤插件：pnpm i css-color-function
+    - 安装页面加载进度条插件：pnpm i nprogress @types/nprogress
 
 ```ts
 // 在根目录下新建 uno.config.ts
@@ -81,4 +82,22 @@ export default defineConfig({
     })
   ]
 });
+```
+
+---
+
+# 登录权限
+
+```ts
+@ 角色管理：
+  1、角色类别：roles: {super_admin: '超级管理员', user: '普通管理员', op: '运营'}
+  2、添加权限接口：post api/role {name: 'super_admin', desc: '超级管理员'}
+  3、用户注册接口：post api/auth/register {
+      username: '', // 用户名
+      password: '', // 密码
+      email: '', // 邮箱
+      phone: '', // 手机号
+      status: 1, // 是否启用状态
+      roleIds: [] // 对应角色
+    }
 ```

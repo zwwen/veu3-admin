@@ -26,11 +26,11 @@
 
 <script lang="ts" setup>
 import avatar from '@/assets/vue.svg';
-// import { useUserStore } from "@/stores/user"
-// const store = useUserStore()
+import { useUserStore } from '@/stores/user';
+const store = useUserStore();
 const { proxy } = getCurrentInstance()!;
 const logout = () => {
-  // store.logout()
+  store.logout();
   proxy?.$message.success('退出成功');
   window.location.reload();
 };

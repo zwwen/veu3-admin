@@ -41,6 +41,6 @@ const isShowLogo = computed({
 </script>
 <style lang="scss" scoped>
 .drawer-item {
-  @apply mt-10;
+  @apply mt-10px flex items-center justify-between;
 }
 </style>

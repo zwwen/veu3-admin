@@ -9,6 +9,7 @@ import 'uno.css';
 import '/public/base.css';
 import '@/style/index.scss';
 import App from './App.vue';
+import '@/permission';
 // 引入自定义插件
 import elementPlugin from '@/plugins/element';
 const pinia = createPinia();

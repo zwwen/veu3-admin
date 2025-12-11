@@ -10,7 +10,7 @@ import { defineConfig } from 'eslint/config';
 
 // 3、使用createRequire方法
 
-import { createRequire } from ' module';
+import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const autoImport = require('./.eslintrc-auto-import.json');
 

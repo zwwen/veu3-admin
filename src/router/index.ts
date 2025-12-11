@@ -51,7 +51,7 @@ const constansRoutes: RouteRecordRaw[] = [
     meta: { title: '404', hidden: true }
   }
 ];
-const asyncRoutes: RouteRecordRaw[] = [
+export const asyncRoutes: RouteRecordRaw[] = [
   // {
   //   path: '/test',
   //   component: Layout,
@@ -107,7 +107,7 @@ const asyncRoutes: RouteRecordRaw[] = [
       {
         path: 'menu',
         name: 'Menu',
-        component: () => import('@/views/System/menu.vue'),
+        component: () => import('@/views/System/menu/index.vue'),
         meta: {
           title: 'menu',
           icon: 'material-symbols:format-list-bulleted-add-rounded'
@@ -116,13 +116,13 @@ const asyncRoutes: RouteRecordRaw[] = [
       {
         path: 'user',
         name: 'User',
-        component: () => import('@/views/System/user.vue'),
+        component: () => import('@/views/System/user/index.vue'),
         meta: { title: 'user', icon: 'ant-design:user-outlined' }
       },
       {
         path: 'role',
         name: 'Role',
-        component: () => import('@/views/System/role.vue'),
+        component: () => import('@/views/System/role/index.vue'),
         meta: { title: 'role', icon: 'ant-design:property-safety-outlined' }
       }
     ]
@@ -142,6 +142,7 @@ const asyncRoutes: RouteRecordRaw[] = [
     ]
   }
 ];
+// 前端需要配置好所有的路由，然后根据用户的权限来获取后端的数据来动态添加异步路由
 export const routes: RouteRecordRaw[] = [...constansRoutes, ...asyncRoutes];
 const router = createRouter({
   history: createWebHistory(),
